@@ -551,6 +551,9 @@ img {
   /* Soft rounding */
   margin-bottom: 20px;
   background: #f9f9f9;
+  width: 100%;
+  aspect-ratio: 1/1;
+  object-fit: cover;
 }
 
 .merch-item h4 {
