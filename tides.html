@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description"
+        content="Live Tide Status for Freshwater Bay, Isle of Wight. Real-time data for swimmers, kayakers, and walkers.">
+    <title>Live Tide Status | Freshwater Bay Guide</title>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&family=Outfit:wght@100..900&display=swap"
+        rel="stylesheet">
+</head>
+
+<body class="tide-page">
+    <header class="site-header">
+        <div class="container header-container">
+            <div class="logo">
+                <a href="/" class="logo-text">Freshwater Bay</a>
+            </div>
+            <nav class="main-nav">
+                <ul class="nav-list">
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/index.html#stay">Stay</a></li>
+                    <li><a href="/index.html#see-do">See & Do</a></li>
+                    <li><a href="/index.html#shop">Shop</a></li>
+                </ul>
+            </nav>
+            <button class="mobile-menu-toggle" aria-label="Toggle navigation">
+                <span class="hamburger"></span>
+            </button>
+        </div>
+    </header>
+
+    <main class="section-padding">
+        <div class="container">
+            <!-- Headline -->
+            <header class="tide-header">
+                <h1 class="page-title">Live Tide Status: Freshwater Bay</h1>
+                <p class="page-subtitle">Real-time data for swimmers, kayakers, and walkers.</p>
+            </header>
+
+            <!-- Component A: At a Glance -->
+            <section class="tide-stat-card card">
+                <div id="tide-status-badge" class="safety-badge">Loading...</div>
+                <div class="stat-grid">
+                    <div class="stat-item">
+                        <span class="stat-label">Direction</span>
+                        <span id="tide-direction" class="stat-value">--</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-label">Current Height</span>
+                        <span id="current-height" class="stat-value">-- m</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-label">Next Event</span>
+                        <span id="next-event" class="stat-value">--</span>
+                    </div>
+                </div>
+                <div id="safety-message" class="safety-description">
+                    Retrieving latest data for Freshwater Bay...
+                </div>
+            </section>
+
+            <!-- Component B: Visual Graph -->
+            <section class="chart-section card">
+                <h3>12-Hour Forecast</h3>
+                <div class="chart-container" style="position: relative; height:300px; width:100%">
+                    <canvas id="tideChart"></canvas>
+                </div>
+                <div class="chart-legend">
+                    <span class="legend-item"><span class="legend-box danger"></span> Cave Access Cut-off (1.5m) </span>
+                </div>
+            </section>
+
+            <!-- Monetization Integration (Native Ad) -->
+            <section id="ad-container" class="ad-banner card">
+                <!-- Dynamically injected based on tide -->
+            </section>
+
+            <!-- Component C: 7-Day Outlook -->
+            <section class="outlook-section">
+                <h3>7-Day Outlook</h3>
+                <div class="table-container">
+                    <table class="outlook-table" id="outlook-table">
+                        <thead>
+                            <tr>
+                                <th>Date</th>
+                                <th>High Water</th>
+                                <th>Low Water</th>
+                                <th>Sunrise/Set</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- Injected via JS -->
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <p class="disclaimer">Data sourced from Stormglass.io. Predictions are for guidance only and do not account
+                for atmospheric pressure or wind surge. Always check local warning flags on the beach.</p>
+        </div>
+    </footer>
+
+    <script type="module" src="/src/tides.js"></script>
+</body>
+
+</html>
