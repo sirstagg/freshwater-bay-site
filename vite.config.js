@@ -1,7 +1,7 @@
 import { defineConfig } from 'vite'
 
 export default defineConfig({
-    base: '/freshwater-bay-site/',
+    base: './',
     build: {
         rollupOptions: {
             input: {
